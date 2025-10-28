@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "408595630423",
+    "project_id": "simple-authentication-16057",
+    "storage_bucket": "simple-authentication-16057.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408595630423:android:aae8d6cf0232e448d39612",
+        "android_client_info": {
+          "package_name": "com.example.simple_authentication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaO8LiZ6ctWf2ZkjWbAdMjQ4tmKYGZEnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
