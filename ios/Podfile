@@ -1,18 +1,16 @@
 platform :ios, '15.0'
 
-# Use frameworks for plugins like Firebase
 use_frameworks!
 use_modular_headers!
 
 target 'Runner' do
-  # Flutter plugins are automatically added here
-  flutter_install_all_ios_pods(File.dirname(File.realpath(__FILE__)))
+  # Pods will be automatically installed by Flutter plugins
 end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      # Fix for arm64 simulator builds
+      # Exclude arm64 for simulator to avoid Xcode errors
       config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
     end
   end
