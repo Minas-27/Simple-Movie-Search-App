@@ -1,23 +1,16 @@
 platform :ios, '15.0'
 
-# CocoaPods analytics
-install! 'cocoapods', :disable_input_output_paths => true
-
 use_frameworks!
 use_modular_headers!
 
 target 'Runner' do
-  # Flutter pods
-  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
-
-  # Add any other pods here if needed
+  # Pods for Firebase will be automatically linked by Flutter plugins
 end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-    flutter_additional_ios_build_settings(target)
-    # Fix for Xcode 14+ arm64 simulator issues
     target.build_configurations.each do |config|
+      # Exclude arm64 for simulator to avoid Xcode build errors
       config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
     end
   end
