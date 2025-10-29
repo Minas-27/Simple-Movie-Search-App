@@ -4,13 +4,12 @@ use_frameworks!
 use_modular_headers!
 
 target 'Runner' do
-  # Pods will be automatically installed by Flutter plugins
+  # No flutter_install_all_ios_pods needed
 end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      # Exclude arm64 for simulator to avoid Xcode errors
       config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
     end
   end
